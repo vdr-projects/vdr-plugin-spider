@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id$
+ * $Id: history.h 2 2005-05-14 22:25:56Z tom $
  */
 
 #ifndef VDR_SPIDER_HISTORY_H
