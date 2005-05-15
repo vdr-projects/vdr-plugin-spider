@@ -8,3 +8,4 @@ VDR Plugin 'spider' Revision History
 XXXX-XX-XX: Version 0.1.1
 
 - Fixed compilation with woody
+- Improved cover.xpm
