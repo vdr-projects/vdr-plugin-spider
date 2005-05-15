@@ -3,12 +3,13 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: game.h 2 2005-05-14 22:25:56Z tom $
+ * $Id: game.h 5 2005-05-15 18:40:40Z tom $
  */
 
 #ifndef VDR_SPIDER_GAME_H
 #define VDR_SPIDER_GAME_H
 
+#include "spider.h"
 class SpiderSetup;
 class Deck;
 class Tableau;

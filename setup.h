@@ -3,12 +3,13 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: setup.h 2 2005-05-14 22:25:56Z tom $
+ * $Id: setup.h 5 2005-05-15 18:40:40Z tom $
  */
 
 #ifndef VDR_SPIDER_SETUP_H
 #define VDR_SPIDER_SETUP_H
 
+#include "spider.h"
 #include <vdr/menuitems.h>
 
 

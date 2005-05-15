@@ -3,12 +3,13 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: bitmap.h 2 2005-05-14 22:25:56Z tom $
+ * $Id: bitmap.h 5 2005-05-15 18:40:40Z tom $
  */
 
 #ifndef VDR_SPIDER_BITMAP_H
 #define VDR_SPIDER_BITMAP_H
 
+#include "spider.h"
 #include <vdr/config.h>
 #include <vdr/osdbase.h>
 #include <vdr/osd.h>
