@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: game.c 2 2005-05-14 22:25:56Z tom $
+ * $Id: game.c 7 2005-05-16 14:11:51Z tom $
  */
 
 #include "game.h"
@@ -30,6 +30,8 @@
                                a->bpp, true)
   #define clrGray50 clrBackground
   #define Color GetColor
+  #define savePalette(bitmap) savePalette(2)
+  #define SetPalette(palette, area) Width('X')
 #endif
 
 
@@ -283,7 +285,13 @@ void SpiderGame::paint()
   int x2 = xPos + width - 1;
   int y1 = yPos;
   int y2 = yPos + height - 1;
+
+  // Save and restore palette to reduce flickering
+  cPalette savePalette(*osd->GetBitmap(0));
   osd->DrawRectangle(x1,     y1,     x2,     y2,     clrGray50);
+  osd->SetPalette(savePalette, 0);
+
+  // Paint red frame
   osd->DrawRectangle(x1,     y1,     x2,     y1 + 1, clrRed);
   osd->DrawRectangle(x1,     y1,     x1 + 1, y2,     clrRed);
   osd->DrawRectangle(x1,     y2 - 1, x2,     y2,     clrRed);
