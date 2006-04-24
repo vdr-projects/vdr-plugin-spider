@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: game.h 5 2005-05-15 18:40:40Z tom $
+ * $Id: game.h 22 2006-04-24 23:26:30Z tom $
  */
 
 #ifndef VDR_SPIDER_GAME_H
@@ -19,13 +19,6 @@ class Bitmap;
 #include <vdr/osdbase.h>
 #include <vdr/osd.h>
 
-// Compatibility to older vdr versions
-#if VDRVERSNUM < 10307
-  #define cOsd_ cOsdBase
-#else
-  #define cOsd_ cOsd
-#endif
-
 
 /** --- class SpiderGame --------------------------------------------------- **/
 
@@ -37,7 +30,7 @@ private:
   int width, height;
   int xPos, yPos;
   int xDist, yDist;
-  cOsd_* osd;
+  cOsd* osd;
   Bitmap* info;
   const char* infoText;
   Deck* deck;

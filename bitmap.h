@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: bitmap.h 5 2005-05-15 18:40:40Z tom $
+ * $Id: bitmap.h 22 2006-04-24 23:26:30Z tom $
  */
 
 #ifndef VDR_SPIDER_BITMAP_H
@@ -13,11 +13,6 @@
 #include <vdr/config.h>
 #include <vdr/osdbase.h>
 #include <vdr/osd.h>
-
-// Compatibility to older vdr versions
-#if VDRVERSNUM < 10307
-  #define tColor eDvbColor
-#endif
 
 
 /** --- class Bitmap ------------------------------------------------------- **/
@@ -47,11 +42,6 @@ public:
 
   /** Load a bitmap from an xpm file - taken from ElchiAIO4d patch */
   bool loadXpm(const char* FileName, tColor NoneColor = clrTransparent);
-
-#if VDRVERSNUM < 10307
-  /** Wrap the text to fit into the bitmap - taken from font.c in VDR 1.3.7 */
-  char *textWrapper(const char *Text, int *p_lines);
-#endif
 };
 
 #endif // VDR_SPIDER_BITMAP_H

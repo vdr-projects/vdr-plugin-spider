@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: deck.c 2 2005-05-14 22:25:56Z tom $
+ * $Id: deck.c 22 2006-04-24 23:26:30Z tom $
  */
 
 #include "deck.h"
@@ -15,12 +15,7 @@
 /** Random number 0 .. max-1 */
 unsigned int rand(unsigned int max)
 {
-  static unsigned int seed =
-#if VDRVERSNUM >= 10318
-    cTimeMs::Now();
-#else
-    time_ms();
-#endif
+  static unsigned int seed = cTimeMs::Now();
   return (unsigned int)((double)max * rand_r(&seed) / (RAND_MAX + 1.0));
 }
 

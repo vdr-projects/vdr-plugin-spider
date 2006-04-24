@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: game.c 7 2005-05-16 14:11:51Z tom $
+ * $Id: game.c 22 2006-04-24 23:26:30Z tom $
  */
 
 #include "game.h"
@@ -16,23 +16,6 @@
 #include <vdr/config.h>
 #include <vdr/osdbase.h>
 #include <vdr/osd.h>
-
-// Compatibility to older vdr versions
-#if VDRVERSNUM < 10307
-  #define tColor eDvbColor
-  #define DrawRectangle Fill
-  #define DrawBitmap SetBitmap
-  #define cOsdProvider cOsd
-  #define NewOsd OpenRaw
-  struct tArea { int x1, y1, x2, y2, bpp; };
-  #define SetAreas(a,n) Create(a->x1,             a->y1,\
-                               a->x2 - a->x1 + 1, a->y2 - a->y1 + 1,\
-                               a->bpp, true)
-  #define clrGray50 clrBackground
-  #define Color GetColor
-  #define savePalette(bitmap) savePalette(2)
-  #define SetPalette(palette, area) Width('X')
-#endif
 
 
 // Defintions for bitmaps
