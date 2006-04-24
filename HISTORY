@@ -10,3 +10,9 @@ VDR Plugin 'spider' Revision History
 - Fixed compilation with woody
 - Improved cover.xpm
 - Reduced flickering on VDR >= 1.3.7
+
+2006-04-25: Version 0.1.2
+
+- Removed compatibility to VDR < 1.3.47.
+- Added support for APIVERSION define in Makefile.
+- Added placeholders for Czech language texts - hoping for real language texts.
