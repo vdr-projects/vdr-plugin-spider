@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: i18n.c 2 2005-05-14 22:25:56Z tom $
+ * $Id: i18n.c 24 2006-04-24 23:28:00Z tom $
  */
 
 #include "i18n.h"
@@ -27,18 +27,11 @@ const tI18nPhrase Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "Spider Arachnid - the best patience game", // English
     "Spider Arachnid - die beste Patience", // Deutsch / German
@@ -56,18 +49,11 @@ const tI18nPhrase Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "Variation", // English
     "Variante", // Deutsch / German
@@ -85,18 +71,11 @@ const tI18nPhrase Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "Mini (one deck)", // English
     "Mini (ein Blatt)", // Deutsch / German
@@ -114,18 +93,11 @@ const tI18nPhrase Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "Normal", // English
     "Normal", // Deutsch / German
@@ -143,18 +115,11 @@ const tI18nPhrase Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "Only complete suits are allowed to remove", // English
     "Nur vollständige Sätze können entfernt werden", // Deutsch / German
@@ -172,18 +137,11 @@ const tI18nPhrase Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "No cards left", // English
     "Keine Karten übrig", // Deutsch / German
@@ -201,18 +159,11 @@ const tI18nPhrase Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "Deal not allowed with empty piles", // English
     "Neue Karten nur, wenn alle Reihen belegt", // Deutsch / German
@@ -230,18 +181,11 @@ const tI18nPhrase Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { "Congratulations!\nPress OK to start a new game", // English
     "Herzlichen Glückwunsch!\nOK startet ein neues Spiel", // Deutsch / German
@@ -259,18 +203,11 @@ const tI18nPhrase Phrases[] = {
     "", // Românã / Romanian
     "", // Magyar / Hungarian
     "", // Català / Catalanian
-#if VDRVERSNUM > 10302
     "", // ÀãááÚØÙ / Russian
-#if VDRVERSNUM > 10307
     "", // Hrvatski / Croatian
-#if VDRVERSNUM > 10313
     "", // Eesti / Estonian
-#if VDRVERSNUM > 10316
     "", // Dansk / Danish
-#endif
-#endif
-#endif
-#endif
+    "", // Èesky / Czech
   },
   { NULL }
 };
