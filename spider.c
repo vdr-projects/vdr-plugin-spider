@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: spider.c 25 2006-04-24 23:29:57Z tom $
+ * $Id: spider.c 71 2007-02-23 20:45:57Z tom $
  */
 
 #include "spider.h"
@@ -13,7 +13,7 @@
 #include <vdr/plugin.h>
 
 
-static const char* VERSION       = "0.1.2";
+static const char* VERSION       = "0.1.3";
 static const char* DESCRIPTION   = "Spider Arachnid - the best patience game";
 static const char* MAINMENUENTRY = "Spider Arachnid";
 

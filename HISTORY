@@ -16,3 +16,7 @@ VDR Plugin 'spider' Revision History
 - Removed compatibility to VDR < 1.3.47.
 - Added support for APIVERSION define in Makefile.
 - Added placeholders for Czech language texts - hoping for real language texts.
+
+2007-02-23: Version 0.1.3
+
+- Added Spanish language texts (thanks to bittor from open7x0.org).
