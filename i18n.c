@@ -3,7 +3,13 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: i18n.c 24 2006-04-24 23:28:00Z tom $
+ * $Id: i18n.c 69 2007-02-23 20:44:13Z tom $
+ *
+ *
+ * Translations provided by:
+ *
+ * Spanish     bittor from open7x0.org
+ *
  */
 
 #include "i18n.h"
@@ -21,7 +27,7 @@ const tI18nPhrase Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Spider Arachnid", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -43,7 +49,7 @@ const tI18nPhrase Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Spider Arachnid - mejor juego paciencia", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -65,7 +71,7 @@ const tI18nPhrase Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Variación", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -87,7 +93,7 @@ const tI18nPhrase Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Mini (una baraja)", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -109,7 +115,7 @@ const tI18nPhrase Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Normal", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -131,7 +137,7 @@ const tI18nPhrase Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Sólo puede eliminar los palos completos", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -153,7 +159,7 @@ const tI18nPhrase Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "No dejó cartas", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -175,7 +181,7 @@ const tI18nPhrase Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Reparto no permitido con montones vacíos", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -197,7 +203,7 @@ const tI18nPhrase Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "¡Felicidades!\nPulse OK para iniciar un nuevo juego", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
