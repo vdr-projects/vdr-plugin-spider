@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: spider.h 2 2005-05-14 22:25:56Z tom $
+ * $Id: spider.h 84 2007-06-20 16:13:43Z tom $
  */
 
 #ifndef VDR_SPIDER_H
@@ -14,8 +14,13 @@
 #ifdef USE_TEMPLATES_FROM_STL
 
 #include <vector>
-#define Array std::vector
-#define Vector std::vector
+template <class T>
+class Array : public std::vector<T>
+{
+public:
+  Array(int length) : std::vector<T>(length) {}
+};
+template <class T> class Vector : public std::vector<T> {};
 
 #else // use own templates
 
