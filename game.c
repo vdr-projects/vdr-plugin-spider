@@ -3,7 +3,7 @@
  *
  * See the README file for copyright information and how to reach the author.
  *
- * $Id: game.c 22 2006-04-24 23:26:30Z tom $
+ * $Id: game.c 85 2007-06-20 16:14:45Z tom $
  */
 
 #include "game.h"
@@ -82,8 +82,8 @@ void SpiderGame::Show()
   osd = cOsdProvider::NewOsd(0, 0);
   if (osd)
   {
-    tArea areas[] = { xPos, yPos, xPos + width - 1, yPos + height - 1, 4 };
-    osd->SetAreas(areas, 1);
+    tArea area = { xPos, yPos, xPos + width - 1, yPos + height - 1, 4 };
+    osd->SetAreas(&area, 1);
     start();
     paint();
   }
