@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: spider.c 87 2007-06-22 22:37:36Z tom $
+ * $Id: spider.c 88 2007-06-23 00:15:39Z tom $
  */
 
 #include "spider.h"
@@ -27,7 +27,7 @@
 #include <vdr/plugin.h>
 
 
-static const char* VERSION       = "0.1.3";
+static const char* VERSION       = "0.1.4";
 static const char* DESCRIPTION   = "Spider Arachnid - the best patience game";
 static const char* MAINMENUENTRY = "Spider Arachnid";
 
