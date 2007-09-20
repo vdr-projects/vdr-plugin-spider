@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: deck.c 87 2007-06-22 22:37:36Z tom $
+ * $Id: deck.cpp 94 2007-09-20 23:43:48Z tom $
  */
 
 #include "deck.h"

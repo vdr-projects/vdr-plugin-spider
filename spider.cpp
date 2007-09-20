@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: spider.c 88 2007-06-23 00:15:39Z tom $
+ * $Id: spider.cpp 94 2007-09-20 23:43:48Z tom $
  */
 
 #include "spider.h"
