@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: tableau.cpp 94 2007-09-20 23:43:48Z tom $
+ * $Id: tableau.cpp 95 2007-09-21 23:01:10Z tom $
  */
 
 #include "tableau.h"
@@ -25,8 +25,10 @@
 #include "heap.h"
 #include "history.h"
 
+using namespace Spider;
 
-/** --- class Tableau ------------------------------------------------------ **/
+
+//--- class Spider::Tableau ----------------------------------------------------
 
 /** Constructor */
 Tableau::Tableau(Deck& deck, int pileCount, int finalCount, int deals) :

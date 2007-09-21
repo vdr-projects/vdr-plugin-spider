@@ -17,139 +17,145 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: history.h 87 2007-06-22 22:37:36Z tom $
+ * $Id: history.h 95 2007-09-21 23:01:10Z tom $
  */
 
 #ifndef VDR_SPIDER_HISTORY_H
 #define VDR_SPIDER_HISTORY_H
 
 #include "spider.h"
-class Pack;
-class Pile;
-typedef Array<Pile*> Piles;
-class FinalHeap;
-class Move;
-typedef Vector<Move*> Moves;
 
 
-/** --- class History ------------------------------------------------------ **/
-
-class History
+namespace Spider
 {
-private:
-  Moves history;
-  unsigned int executed;
-
-public:
-
-  /** Constructor */
-  History();
-
-  /** Destructor */
-  ~History();
-
-  /** Current move in the history */
-  Move* current();
-
-  /** Add a new move */
-  void add(Move* move);
-
-  /** Set previous move as current */
-  void backward();
-
-  /** Set next move as current */
-  void forward();
-
-  /** Are there executed moves in the history */
-  bool movesExecuted();
-
-  /** Are there moves to execute in the history */
-  bool movesToExecute();
-};
+  class Pack;
+  class Pile;
+  typedef Array<Pile*> Piles;
+  class FinalHeap;
+  class Move;
+  typedef Vector<Move*> Moves;
 
 
-/** --- base class Move ---------------------------------------------------- **/
+  //--- class Spider::History --------------------------------------------------
 
-class Move
-{
-public:
+  class History
+  {
+  private:
+    Moves history;
+    unsigned int executed;
 
-  /** Destructor */
-  virtual ~Move() {};
+  public:
 
-  /** Do the move */
-  virtual void execute() = 0;
+    /** Constructor */
+    History();
 
-  /** Redo the move */
-  virtual void takeBack() = 0;
-};
+    /** Destructor */
+    ~History();
 
+    /** Current move in the history */
+    Move* current();
 
-/** --- class DealMove ----------------------------------------------------- **/
+    /** Add a new move */
+    void add(Move* move);
 
-class DealMove : public Move
-{
-private:
-  Pack* source;
-  Piles& destination;
+    /** Set previous move as current */
+    void backward();
 
-public:
+    /** Set next move as current */
+    void forward();
 
-  /** Constructor */
-  DealMove(Pack* s, Piles& d);
+    /** Are there executed moves in the history */
+    bool movesExecuted();
 
-  /** Do the move */
-  void execute();
-
-  /** Redo the move */
-  void takeBack();
-};
+    /** Are there moves to execute in the history */
+    bool movesToExecute();
+  };
 
 
-/** --- class NormalMove --------------------------------------------------- **/
+  //--- class Spider::Move -----------------------------------------------------
 
-class NormalMove : public Move
-{
-private:
-  Pile* source;
-  Pile* destination;
-  int count;
-  bool turn;
+  class Move
+  {
+  public:
 
-public:
+    /** Destructor */
+    virtual ~Move() {};
 
-  /** Constructor */
-  NormalMove(Pile* s, Pile* d, int c, bool t);
+    /** Do the move */
+    virtual void execute() = 0;
 
-  /** Do the move */
-  void execute();
-
-  /** Redo the move */
-  void takeBack();
-};
+    /** Redo the move */
+    virtual void takeBack() = 0;
+  };
 
 
-/** --- class FinalMove ---------------------------------------------------- **/
+  //--- class Spider::DealMove -------------------------------------------------
 
-class FinalMove : public Move
-{
-private:
-  Pile* source;
-  FinalHeap* destination;
-  int count;
-  bool turn;
-  bool bonus;
+  class DealMove : public Move
+  {
+  private:
+    Pack* source;
+    Piles& destination;
 
-public:
+  public:
 
-  /** Constructor */
-  FinalMove(Pile* s, FinalHeap* d, int c, bool t, bool b);
+    /** Constructor */
+    DealMove(Pack* s, Piles& d);
 
-  /** Do the move */
-  void execute();
+    /** Do the move */
+    void execute();
 
-  /** Redo the move */
-  void takeBack();
-};
+    /** Redo the move */
+    void takeBack();
+  };
+
+
+  //--- class Spider::NormalMove -----------------------------------------------
+
+  class NormalMove : public Move
+  {
+  private:
+    Pile* source;
+    Pile* destination;
+    int count;
+    bool turn;
+
+  public:
+
+    /** Constructor */
+    NormalMove(Pile* s, Pile* d, int c, bool t);
+
+    /** Do the move */
+    void execute();
+
+    /** Redo the move */
+    void takeBack();
+  };
+
+
+  //--- class Spider::FinalMove ------------------------------------------------
+
+  class FinalMove : public Move
+  {
+  private:
+    Pile* source;
+    FinalHeap* destination;
+    int count;
+    bool turn;
+    bool bonus;
+
+  public:
+
+    /** Constructor */
+    FinalMove(Pile* s, FinalHeap* d, int c, bool t, bool b);
+
+    /** Do the move */
+    void execute();
+
+    /** Redo the move */
+    void takeBack();
+  };
+
+} // namespace Spider
 
 #endif // VDR_SPIDER_HISTORY_H

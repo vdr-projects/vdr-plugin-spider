@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: bitmap.cpp 94 2007-09-20 23:43:48Z tom $
+ * $Id: bitmap.cpp 95 2007-09-21 23:01:10Z tom $
  */
 
 #include "bitmap.h"
@@ -26,8 +26,10 @@
 #include <vdr/osd.h>
 #include <ctype.h>
 
+using namespace SpiderPlugin;
 
-/** --- class Bitmap ------------------------------------------------------- **/
+
+//--- class SpiderPlugin::Bitmap -----------------------------------------------
 
 /** Constructor */
 Bitmap::Bitmap(int width, int height) :
@@ -36,7 +38,8 @@ Bitmap::Bitmap(int width, int height) :
 }
 
 /** Constructor for a bitmap with frame */
-Bitmap::Bitmap(int width, int height, tColor frameColor, tColor backgroundColor) :
+Bitmap::Bitmap(int width, int height, tColor frameColor,
+                                      tColor backgroundColor) :
   cBitmap(width, height, 4)
 {
   DrawRectangle(0, 0, width - 1, height - 1, backgroundColor);

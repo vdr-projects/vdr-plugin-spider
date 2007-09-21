@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: spider.cpp 94 2007-09-20 23:43:48Z tom $
+ * $Id: spider.cpp 95 2007-09-21 23:01:10Z tom $
  */
 
 #include "spider.h"
@@ -27,46 +27,96 @@
 #include <vdr/plugin.h>
 
 
-static const char* VERSION       = "0.1.4";
-static const char* DESCRIPTION   = "Spider Arachnid - the best patience game";
-static const char* MAINMENUENTRY = "Spider Arachnid";
-
-
-/** --- class SpiderPlugin ------------------------------------------------- **/
-
-class SpiderPlugin : public cPlugin
+/** 'Spider Arachnid' is a VDR plugin implementation of a patience game. */
+namespace SpiderPlugin
 {
-private:
-  SpiderSetup setup;
-public:
-  virtual const char* Version() { return VERSION; }
-  virtual const char* Description() { return tr(DESCRIPTION); }
-  virtual bool Start();
-  virtual const char* MainMenuEntry() { return tr(MAINMENUENTRY); }
-  virtual cOsdObject* MainMenuAction();
-  virtual cMenuSetupPage* SetupMenu();
-  virtual bool SetupParse(const char* name, const char* value);
-};
 
-bool SpiderPlugin::Start()
+  /** Version number of the plugin */
+  static const char* VERSION = "0.1.4";
+
+  /** Short description of the plugin's purpose */
+  static const char* DESCRIPTION = "Spider Arachnid - the best patience game";
+
+  /** Name of the entry in VDR's main menu */
+  static const char* MAINMENUENTRY = "Spider Arachnid";
+
+
+  //--- class SpiderPlugin::Plugin ---------------------------------------------
+
+  /** Main class of the VDR plugin 'Spider' */
+  class Plugin : public cPlugin
+  {
+    SetupData setup;
+
+  public:
+
+    /** Version number of the plugin */
+    virtual const char* Version() { return VERSION; }
+
+    /** Localized short description of the plugin's purpose */
+    virtual const char* Description() { return tr(DESCRIPTION); }
+
+    /** Perform the startup actions of the plugin. */
+    virtual bool Start();
+
+    /** Localized name of the entry in VDR's main menu */
+    virtual const char* MainMenuEntry() { return tr(MAINMENUENTRY); }
+
+    /** OSD object that shows the plugin's main menu */
+    virtual cOsdObject* MainMenuAction();
+
+    /** Setup menu page to adjust the setup parameters of the plugin */
+    virtual cMenuSetupPage* SetupMenu();
+
+    /** Parse the setup parameters of the plugin. */
+    virtual bool SetupParse(const char* name, const char* value);
+  };
+
+} // namespace SpiderPlugin
+
+
+using namespace SpiderPlugin;
+
+
+//--- class SpiderPlugin::Plugin -----------------------------------------------
+
+/** Perform the startup actions of the plugin.
+ *
+ * This method is called once at VDR's startup.
+ */
+bool Plugin::Start()
 {
   RegisterI18n(Phrases);
   return true;
 }
 
-cOsdObject* SpiderPlugin::MainMenuAction()
+/** OSD object that shows the plugin's main menu
+ *
+ * This method is called every time the plugin's main menu entry is selected.
+ */
+cOsdObject* Plugin::MainMenuAction()
 {
-  return new SpiderGame(setup, ConfigDirectory(Name()));
+  return new Game(setup, ConfigDirectory(Name()));
 }
 
-cMenuSetupPage* SpiderPlugin::SetupMenu()
+/** Setup menu page to adjust the setup parameters of the plugin
+ *
+ * This method is called every time the plugin's setup menu entry is selected.
+ */
+cMenuSetupPage* Plugin::SetupMenu()
 {
-  return new SpiderSetupMenu(setup);
+  return new SetupPage(setup);
 }
 
-bool SpiderPlugin::SetupParse(const char* name, const char* value)
+/** Parse the setup parameters of the plugin.
+ *
+ * This method is called for each setup parameter the plugin has previously
+ * stored in the global setup data.
+ */
+bool Plugin::SetupParse(const char* name, const char* value)
 {
   return setup.parse(name, value);
 }
 
-VDRPLUGINCREATOR(SpiderPlugin); // Don't touch this!
+/** "Magic" hook that allows VDR to load the plugin into its memory */
+VDRPLUGINCREATOR(Plugin); // Don't touch this!

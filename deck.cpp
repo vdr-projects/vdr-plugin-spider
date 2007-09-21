@@ -17,13 +17,15 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: deck.cpp 94 2007-09-20 23:43:48Z tom $
+ * $Id: deck.cpp 95 2007-09-21 23:01:10Z tom $
  */
 
 #include "deck.h"
 #include <vdr/config.h>
 #include <vdr/tools.h>
 #include <stdlib.h>
+
+using namespace Spider;
 
 
 /** Random number 0 .. max-1 */
@@ -34,7 +36,7 @@ unsigned int rand(unsigned int max)
 }
 
 
-/** --- class Deck --------------------------------------------------------- **/
+//--- class Spider::Deck -------------------------------------------------------
 
 /** Constructor */
 Deck::Deck(int cards, int suits, int decks) :
@@ -73,7 +75,7 @@ void Deck::shuffle()
 }
 
 
-/** --- class Card --------------------------------------------------------- **/
+//--- class Spider::Card -------------------------------------------------------
 
 /** Constructor */
 Card::Card(int s, int r)

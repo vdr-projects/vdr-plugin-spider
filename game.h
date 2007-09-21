@@ -17,81 +17,87 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: game.h 87 2007-06-22 22:37:36Z tom $
+ * $Id: game.h 95 2007-09-21 23:01:10Z tom $
  */
 
 #ifndef VDR_SPIDER_GAME_H
 #define VDR_SPIDER_GAME_H
 
 #include "spider.h"
-class SpiderSetup;
-class Deck;
-class Tableau;
-class Card;
-class Bitmap;
+namespace Spider { class Deck; class Tableau; class Card; }
 #include <vdr/config.h>
 #include <vdr/osdbase.h>
 #include <vdr/osd.h>
 
 
-/** --- class SpiderGame --------------------------------------------------- **/
-
-class SpiderGame : public cOsdObject
+namespace SpiderPlugin
 {
-private:
-  const SpiderSetup& setup;
-  const char* confdir;
-  int width, height;
-  int xPos, yPos;
-  int xDist, yDist;
-  cOsd* osd;
-  Bitmap* info;
-  const char* infoText;
-  Deck* deck;
-  Tableau* tableau;
-  unsigned int currentPile;
-  enum { cursorOnPile, selectedPile, cursorOnPack, gameOver } status;
+  class SetupData;
+  class Bitmap;
 
-  /** Start a new game */
-  void start();
 
-  /** Paint all pieces of the game */
-  void paint();
+  //--- class SpiderPlugin::Game -----------------------------------------------
 
-  /** Paint the cursor onto a card */
-  void paintCursor(int x, int y);
+  /** Main menu of the plugin */
+  class Game : public cOsdObject
+  {
+    const SetupData& setup;
+    const char* confdir;
+    int width, height;
+    int xPos, yPos;
+    int xDist, yDist;
+    cOsd* osd;
+    Bitmap* info;
+    const char* infoText;
+    Spider::Deck* deck;
+    Spider::Tableau* tableau;
+    unsigned int currentPile;
+    enum { cursorOnPile, selectedPile, cursorOnPack, gameOver } status;
 
-  /** Paint the pack */
-  void paintPack();
+  public:
 
-  /** Paint a final heap */
-  void paintFinal(unsigned int f);
+    /** Constructor */
+    Game(const SetupData& setup, const char* confdir);
 
-  /** Paint a pile */
-  void paintPile(unsigned int p);
+    /** Destructor */
+    virtual ~Game();
 
-  /** Paint an empty card frame */
-  void paintFrame(int x, int y);
+    /** Display the game on the OSD */
+    virtual void Show();
 
-  /** Paint a card back */
-  void paintBack(int x, int y);
+    /** Process user events */
+    virtual eOSState ProcessKey(eKeys key);
 
-  /** Paint a card */
-  void paintCard(int x, int y, const Card& card);
+  private:
 
-public:
+    /** Start a new game */
+    void start();
 
-  /** Constructor */
-  SpiderGame(const SpiderSetup& setup, const char* confdir);
+    /** Paint all pieces of the game */
+    void paint();
 
-  /** Destructor */
-  virtual ~SpiderGame();
+    /** Paint the cursor onto a card */
+    void paintCursor(int x, int y);
 
-  /** Display the game on the OSD */
-  virtual void Show();
+    /** Paint the pack */
+    void paintPack();
 
-  /** Process user events */
-  virtual eOSState ProcessKey(eKeys key);
-};
+    /** Paint a final heap */
+    void paintFinal(unsigned int f);
+
+    /** Paint a pile */
+    void paintPile(unsigned int p);
+
+    /** Paint an empty card frame */
+    void paintFrame(int x, int y);
+
+    /** Paint a card back */
+    void paintBack(int x, int y);
+
+    /** Paint a card */
+    void paintCard(int x, int y, const Spider::Card& card);
+  };
+
+} // namespace SpiderPlugin
 
 #endif // VDR_SPIDER_GAME_H

@@ -17,14 +17,16 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: heap.cpp 94 2007-09-20 23:43:48Z tom $
+ * $Id: heap.cpp 95 2007-09-21 23:01:10Z tom $
  */
 
 #include "heap.h"
 #include "deck.h"
 
+using namespace Spider;
 
-/** --- base class Heap ---------------------------------------------------- **/
+
+//--- virtual base class Spider::Heap ------------------------------------------
 
 /** Constructor */
 Heap::Heap(unsigned int maxCards)
@@ -106,7 +108,7 @@ void Heap::resetChanged()
 }
 
 
-/** --- class Pack --------------------------------------------------------- **/
+//--- class Spider::Pack -------------------------------------------------------
 
 /** Constructor */
 Pack::Pack(const Deck& deck) :
@@ -149,7 +151,7 @@ void Pack::takeBackDeal(Piles& piles)
 }
 
 
-/** --- class Pile --------------------------------------------------------- **/
+//--- class Spider::Pile -------------------------------------------------------
 
 /** Constructor */
 Pile::Pile(const Deck& deck) :
@@ -294,7 +296,7 @@ int Pile::cardsChanged() const
 }
 
 
-/** --- class FinalHeap ---------------------------------------------------- **/
+//--- class Spider::FinalHeap --------------------------------------------------
 
 /** Constructor */
 FinalHeap::FinalHeap(const Deck& deck) :

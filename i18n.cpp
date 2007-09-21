@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.cpp 94 2007-09-20 23:43:48Z tom $
+ * $Id: i18n.cpp 95 2007-09-21 23:01:10Z tom $
  *
  *
  * Translations provided by:
@@ -30,7 +30,7 @@
 #include <vdr/config.h>
 
 
-const tI18nPhrase Phrases[] = {
+const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Spider Arachnid", // English
     "Spider Arachnid", // Deutsch / German
     "", // Slovenski / Slovenian

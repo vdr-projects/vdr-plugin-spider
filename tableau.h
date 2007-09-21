@@ -17,90 +17,96 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: tableau.h 87 2007-06-22 22:37:36Z tom $
+ * $Id: tableau.h 95 2007-09-21 23:01:10Z tom $
  */
 
 #ifndef VDR_SPIDER_TABLEAU_H
 #define VDR_SPIDER_TABLEAU_H
 
 #include "spider.h"
-class Deck;
-class Card;
-class Pack;
-class Pile;
-typedef Array<Pile*> Piles;
-class FinalHeap;
-typedef Array<FinalHeap*> Finals;
-class History;
 
 
-/** --- class Tableau ------------------------------------------------------ **/
-
-class Tableau
+namespace Spider
 {
-private:
-  int dealCount;
-  int cardsToOpen;
-  Deck& deck;
+  class Deck;
+  class Card;
+  class Pack;
+  class Pile;
+  typedef Array<Pile*> Piles;
+  class FinalHeap;
+  typedef Array<FinalHeap*> Finals;
+  class History;
 
-public:
-  Pack* pack;
-  Piles piles;
-  Finals finals;
-  Pile* selected;
-  bool changed;
-  History* history;
 
-  /** Constructor */
-  Tableau(Deck& deck, int pileCount, int finalCount, int deals);
+  //--- class Spider::Tableau --------------------------------------------------
 
-  /** Destructor */
-  ~Tableau();
+  class Tableau
+  {
+  private:
+    int dealCount;
+    int cardsToOpen;
+    Deck& deck;
 
-  /** Current count of deals */
-  int deals();
+  public:
+    Pack* pack;
+    Piles piles;
+    Finals finals;
+    Pile* selected;
+    bool changed;
+    History* history;
 
-  /** Current count of points */
-  int points();
+    /** Constructor */
+    Tableau(Deck& deck, int pileCount, int finalCount, int deals);
 
-  /** Is no pile empty? */
-  bool noPileEmpty();
+    /** Destructor */
+    ~Tableau();
 
-  /** Matches all cards in all piles? */
-  bool allCardsMatches();
+    /** Current count of deals */
+    int deals();
 
-  /** Is the game over? */
-  bool gameOver();
+    /** Current count of points */
+    int points();
 
-  /** Select p-th pile by selecting up to max matching cards on its end */
-  void select(int p, int max = 0);
+    /** Is no pile empty? */
+    bool noPileEmpty();
 
-  /** Unselect the selected pile */
-  void unselect();
+    /** Matches all cards in all piles? */
+    bool allCardsMatches();
 
-  /** Move cards from selected pile to p-th pile */
-  void move(int p);
+    /** Is the game over? */
+    bool gameOver();
 
-  /** Search move from p-th pile to the next left pile, return destination */
-  int autoMoveLeft(int p);
+    /** Select p-th pile by selecting up to max matching cards on its end */
+    void select(int p, int max = 0);
 
-  /** Search move from p-th pile to the next right pile, return destination */
-  int autoMoveRight(int p);
+    /** Unselect the selected pile */
+    void unselect();
 
-  /** Search best move from p-th pile, return destination */
-  int autoMove(int p);
+    /** Move cards from selected pile to p-th pile */
+    void move(int p);
 
-  /** Deal one row */
-  void deal();
+    /** Search move from p-th pile to the next left pile, return destination */
+    int autoMoveLeft(int p);
 
-  /** Remove one suit of cards from selected pile to the final heaps */
-  void remove();
+    /** Search move from p-th pile to the next right pile, return destination */
+    int autoMoveRight(int p);
 
-  /** Go one move backward in the history */
-  void backward();
+    /** Search best move from p-th pile, return destination */
+    int autoMove(int p);
 
-  /** Go one move forward in the history */
-  void forward();
-};
+    /** Deal one row */
+    void deal();
+
+    /** Remove one suit of cards from selected pile to the final heaps */
+    void remove();
+
+    /** Go one move backward in the history */
+    void backward();
+
+    /** Go one move forward in the history */
+    void forward();
+  };
+
+} // namespace Spider
 
 #endif // VDR_SPIDER_TABLEAU_H

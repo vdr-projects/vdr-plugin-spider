@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.h 87 2007-06-22 22:37:36Z tom $
+ * $Id: i18n.h 95 2007-09-21 23:01:10Z tom $
  */
 
 #ifndef VDR_SPIDER_I18N_H
@@ -25,7 +25,14 @@
 
 #include "spider.h"
 #include <vdr/i18n.h>
+#include <vdr/config.h>
 
-extern const tI18nPhrase Phrases[];
+
+namespace SpiderPlugin
+{
+
+  extern const tI18nPhrase Phrases[];
+
+} // namespace SpiderPlugin
 
 #endif // VDR_SPIDER_I18N_H

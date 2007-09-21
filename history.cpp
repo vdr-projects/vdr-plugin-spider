@@ -17,15 +17,17 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: history.cpp 94 2007-09-20 23:43:48Z tom $
+ * $Id: history.cpp 95 2007-09-21 23:01:10Z tom $
  */
 
 #include "history.h"
 #include "deck.h"
 #include "heap.h"
 
+using namespace Spider;
 
-/** --- class History ------------------------------------------------------ **/
+
+//--- class Spider::History ----------------------------------------------------
 
 /** Constructor */
 History::History()
@@ -90,7 +92,7 @@ bool History::movesToExecute()
 }
 
 
-/** --- class DealMove ----------------------------------------------------- **/
+//--- class Spider::DealMove ---------------------------------------------------
 
 /** Constructor */
 DealMove::DealMove(Pack* s, Piles& d) :
@@ -111,7 +113,7 @@ void DealMove::takeBack()
 }
 
 
-/** --- class NormalMove --------------------------------------------------- **/
+//--- class Spider::NormalMove -------------------------------------------------
 
 /** Constructor */
 NormalMove::NormalMove(Pile* s, Pile* d, int c, bool t) :
@@ -136,7 +138,7 @@ void NormalMove::takeBack()
 }
 
 
-/** --- class FinalMove ---------------------------------------------------- **/
+//--- class Spider::FinalMove --------------------------------------------------
 
 /** Constructor */
 FinalMove::FinalMove(Pile* s, FinalHeap* d, int c, bool t, bool b) :

@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: game.cpp 94 2007-09-20 23:43:48Z tom $
+ * $Id: game.cpp 95 2007-09-21 23:01:10Z tom $
  */
 
 #include "game.h"
@@ -31,8 +31,11 @@
 #include <vdr/osdbase.h>
 #include <vdr/osd.h>
 
+using namespace SpiderPlugin;
+using namespace Spider;
 
-// Defintions for bitmaps
+
+// Definitions for bitmaps
 const int cursorWidth  = 16;
 const int cursorHeight = 22;
 const int cardWidth  = 71;
@@ -53,10 +56,10 @@ Bitmap* frame = NULL;
 Bitmap* cards[suitCount][rankCount];
 
 
-/** --- class SpiderGame --------------------------------------------------- **/
+//--- class SpiderPlugin::Game -------------------------------------------------
 
 /** Constructor */
-SpiderGame::SpiderGame(const SpiderSetup& setup, const char* confdir) :
+Game::Game(const SetupData& setup, const char* confdir) :
   cOsdObject(true), setup(setup), confdir(confdir)
 {
   width = 504;
@@ -75,7 +78,7 @@ SpiderGame::SpiderGame(const SpiderSetup& setup, const char* confdir) :
 }
 
 /** Destructor */
-SpiderGame::~SpiderGame()
+Game::~Game()
 {
   delete deck;
   delete tableau;
@@ -91,7 +94,7 @@ SpiderGame::~SpiderGame()
 }
 
 /** Display the game on the OSD */
-void SpiderGame::Show()
+void Game::Show()
 {
   osd = cOsdProvider::NewOsd(0, 0);
   if (osd)
@@ -104,7 +107,7 @@ void SpiderGame::Show()
 }
 
 /** Process user events */
-eOSState SpiderGame::ProcessKey(eKeys key)
+eOSState Game::ProcessKey(eKeys key)
 {
   eOSState state = cOsdObject::ProcessKey(key);
   if (state == osUnknown)
@@ -232,7 +235,7 @@ eOSState SpiderGame::ProcessKey(eKeys key)
 }
 
 /** Start a new game */
-void SpiderGame::start()
+void Game::start()
 {
   // Load bitmaps
   if (cursor == NULL)
@@ -254,7 +257,7 @@ void SpiderGame::start()
 
   int deckCount, dealCount, pileCount;
 
-  if (setup.variation == SpiderSetup::Mini)
+  if (setup.variation == SetupData::Mini)
   {
     deckCount = 1;
     dealCount = 4;
@@ -276,7 +279,7 @@ void SpiderGame::start()
 }
 
 /** Paint all pieces of the game */
-void SpiderGame::paint()
+void Game::paint()
 {
   int x1 = xPos;
   int x2 = xPos + width - 1;
@@ -322,7 +325,7 @@ void SpiderGame::paint()
 }
 
 /** Paint the pack */
-void SpiderGame::paintPack()
+void Game::paintPack()
 {
   int packX = xPos + 1;
   int packY = yPos + 1;
@@ -335,7 +338,7 @@ void SpiderGame::paintPack()
 }
 
 /** Paint a final heap */
-void SpiderGame::paintFinal(unsigned int f)
+void Game::paintFinal(unsigned int f)
 {
   int offset = tableau->piles.size() - tableau->finals.size();
   int finalX = xPos + 1 + (f + offset) * (cardWidth + xDist);
@@ -347,7 +350,7 @@ void SpiderGame::paintFinal(unsigned int f)
 }
 
 /** Paint a pile */
-void SpiderGame::paintPile(unsigned int p)
+void Game::paintPile(unsigned int p)
 {
   int pileX = xPos + 1 + p * (cardWidth + xDist);
   int pileY = yPos + 1 + cardHeight + 1;
@@ -376,7 +379,7 @@ void SpiderGame::paintPile(unsigned int p)
 }
 
 /** Paint the cursor onto a card */
-void SpiderGame::paintCursor(int x, int y)
+void Game::paintCursor(int x, int y)
 {
   int x0 = x + (cardWidth - cursorWidth) / 2;
   int y0 = y + (cardHeight - cursorHeight) / 2;
@@ -390,19 +393,19 @@ void SpiderGame::paintCursor(int x, int y)
 }
 
 /** Paint an empty card frame */
-void SpiderGame::paintFrame(int x, int y)
+void Game::paintFrame(int x, int y)
 {
   osd->DrawBitmap(x, y, *frame);
 }
 
 /** Paint a card back */
-void SpiderGame::paintBack(int x, int y)
+void Game::paintBack(int x, int y)
 {
   osd->DrawBitmap(x, y, *back);
 }
 
 /** Paint a card */
-void SpiderGame::paintCard(int x, int y, const Card& card)
+void Game::paintCard(int x, int y, const Card& card)
 {
   osd->DrawBitmap(x, y, *cards[card.suit][card.rank]);
 }

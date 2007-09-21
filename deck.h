@@ -17,55 +17,61 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: deck.h 87 2007-06-22 22:37:36Z tom $
+ * $Id: deck.h 95 2007-09-21 23:01:10Z tom $
  */
 
 #ifndef VDR_SPIDER_DECK_H
 #define VDR_SPIDER_DECK_H
 
 #include "spider.h"
-class Card;
-typedef Array<Card> Cards;
 
 
-/** --- class Deck --------------------------------------------------------- **/
-
-class Deck
+namespace Spider
 {
-protected:
-  Cards allCards;
-public:
-  int cardsInSuit;
-  int suitCount;
-  int deckCount;
-
-  /** Constructor */
-  Deck(int cards, int suits, int decks);
-
-  /** Current count of cards */
-  int count() const;
-
-  /** Card in deck */
-  const Card& card(int position) const;
-
-  /** Shuffle the deck */
-  void shuffle();
-};
+  class Card;
+  typedef Array<Card> Cards;
 
 
-/** --- class Card --------------------------------------------------------- **/
+  //--- class Spider::Deck -----------------------------------------------------
 
-class Card
-{
-public:
-  int suit;
-  int rank;
+  class Deck
+  {
+  protected:
+    Cards allCards;
+  public:
+    int cardsInSuit;
+    int suitCount;
+    int deckCount;
 
-  /** Constructor */
-  Card(int s = -1, int r = -1);
+    /** Constructor */
+    Deck(int cards, int suits, int decks);
 
-  /** Matches this card to an other card? */
-  bool matchesTo(const Card& other) const;
-};
+    /** Current count of cards */
+    int count() const;
+
+    /** Card in deck */
+    const Card& card(int position) const;
+
+    /** Shuffle the deck */
+    void shuffle();
+  };
+
+
+  //--- class Spider::Card -----------------------------------------------------
+
+  class Card
+  {
+  public:
+    int suit;
+    int rank;
+
+    /** Constructor */
+    Card(int s = -1, int r = -1);
+
+    /** Matches this card to an other card? */
+    bool matchesTo(const Card& other) const;
+  };
+
+} // namespace Spider
 
 #endif // VDR_SPIDER_DECK_H

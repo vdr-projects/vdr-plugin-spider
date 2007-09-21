@@ -17,22 +17,33 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: setup.cpp 94 2007-09-20 23:43:48Z tom $
+ * $Id: setup.cpp 95 2007-09-21 23:01:10Z tom $
  */
 
 #include "setup.h"
 #include "i18n.h"
 #include <strings.h>
 
+using namespace SpiderPlugin;
 
-/** --- class SpiderSetup -------------------------------------------------- **/
 
-SpiderSetup::SpiderSetup()
+//--- class SpiderPlugin::SetupData --------------------------------------------
+
+/** Constructor
+ *
+ * Initialize the setup parameters of the plugin with standard values.
+ */
+SetupData::SetupData()
 {
   variation = Mini;
 }
 
-bool SpiderSetup::parse(const char* name, const char* value)
+/** Parse the setup parameters of the plugin.
+ *
+ * This method is called for each setup parameter the plugin has previously
+ * stored in the global setup data.
+ */
+bool SetupData::parse(const char* name, const char* value)
 {
   if (!strcasecmp(name, "Variation"))
     variation = atoi(value);
@@ -42,9 +53,10 @@ bool SpiderSetup::parse(const char* name, const char* value)
 }
 
 
-/** --- class SpiderSetupMenu ---------------------------------------------- **/
+//--- class SpiderPlugin::SetupPage --------------------------------------------
 
-SpiderSetupMenu::SpiderSetupMenu(SpiderSetup& setup) :
+/** Constructor */
+SetupPage::SetupPage(SetupData& setup) :
   setup(setup), data(setup)
 {
   variationTexts[0] = tr("Mini (one deck)");
@@ -53,7 +65,12 @@ SpiderSetupMenu::SpiderSetupMenu(SpiderSetup& setup) :
                             2, variationTexts));
 }
 
-void SpiderSetupMenu::Store()
+/** Store the setup parameters of the plugin.
+ *
+ * The setup parameters of the plugin are stored into the global setup data
+ * file.
+ */
+void SetupPage::Store()
 {
   setup = data;
   SetupStore("Variation", setup.variation);
