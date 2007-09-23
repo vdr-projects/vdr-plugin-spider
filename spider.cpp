@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: spider.cpp 95 2007-09-21 23:01:10Z tom $
+ * $Id: spider.cpp 96 2007-09-23 13:18:41Z tom $
  */
 
 #include "spider.h"
@@ -25,6 +25,7 @@
 #include "setup.h"
 #include "i18n.h"
 #include <vdr/plugin.h>
+#include <vdr/config.h>
 
 
 /** 'Spider Arachnid' is a VDR plugin implementation of a patience game. */
@@ -35,10 +36,11 @@ namespace SpiderPlugin
   static const char* VERSION = "0.1.4";
 
   /** Short description of the plugin's purpose */
-  static const char* DESCRIPTION = "Spider Arachnid - the best patience game";
+  static const char* DESCRIPTION =
+    trNOOP("Spider Arachnid - the best patience game");
 
   /** Name of the entry in VDR's main menu */
-  static const char* MAINMENUENTRY = "Spider Arachnid";
+  static const char* MAINMENUENTRY = trNOOP("Spider Arachnid");
 
 
   //--- class SpiderPlugin::Plugin ---------------------------------------------
@@ -86,7 +88,9 @@ using namespace SpiderPlugin;
  */
 bool Plugin::Start()
 {
+#if VDRVERSNUM < 10507
   RegisterI18n(Phrases);
+#endif
   return true;
 }
 

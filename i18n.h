@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.h 95 2007-09-21 23:01:10Z tom $
+ * $Id: i18n.h 96 2007-09-23 13:18:41Z tom $
  */
 
 #ifndef VDR_SPIDER_I18N_H
@@ -28,11 +28,17 @@
 #include <vdr/config.h>
 
 
+#if VDRVERSNUM < 10507
+
+#define trNOOP(s) (s)
+
 namespace SpiderPlugin
 {
 
   extern const tI18nPhrase Phrases[];
 
 } // namespace SpiderPlugin
+
+#endif
 
 #endif // VDR_SPIDER_I18N_H
