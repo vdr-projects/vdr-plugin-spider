@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: game.cpp 95 2007-09-21 23:01:10Z tom $
+ * $Id: game.cpp 97 2007-09-24 22:29:48Z tom $
  */
 
 #include "game.h"
@@ -58,30 +58,41 @@ Bitmap* cards[suitCount][rankCount];
 
 //--- class SpiderPlugin::Game -------------------------------------------------
 
-/** Constructor */
-Game::Game(const SetupData& setup, const char* confdir) :
-  cOsdObject(true), setup(setup), confdir(confdir)
+const Game::Colors Game::full_colors =
 {
-  width = 504;
-  height = 360;
-  xPos = (720 - width) / 2;
-  yPos = (576 - height) / 2;
-  xDist = 1;
-  yDist = cardHeight / 6;
+  clrGray50,  // background      50% gray
+  clrRed,     // osd_frame       red
+  clrWhite,   // card_frame      white
+  clrGray50,  // card_frame_bg   50% gray
+  clrBlue,    // inactive_cursor blue
+  clrYellow   // active_cursor   yellow
+};
+const Game::Colors Game::reduced_colors =
+{
+  0xFF0000FF, // background      blue
+  0xFFFF0000, // osd_frame       red
+  0xFFFFFFFF, // card_frame      white
+  0xFF000000, // card_frame_bg   black
+  0xFF0000FF, // inactive_cursor blue
+  0xFF0000FF  // active_cursor   blue
+};
+
+/** Constructor */
+Game::Game(const SetupData& setup, const char* confdir,
+           Deck*& deck, Tableau*& tableau) :
+  cOsdObject(true), setup(setup), confdir(confdir), deck(deck), tableau(tableau)
+{
   osd = NULL;
-  deck = NULL;
-  tableau = NULL;
   currentPile = 0;
   status = cursorOnPile;
-  info = new Bitmap(width * 2 / 3, 60);
+  info = new Bitmap(360, 60);
   infoText = NULL;
+  colors = full_colors;
 }
 
 /** Destructor */
 Game::~Game()
 {
-  delete deck;
-  delete tableau;
   delete info;
   delete osd;
   for (int s = 0; s < suitCount; ++s)
@@ -99,9 +110,64 @@ void Game::Show()
   osd = cOsdProvider::NewOsd(0, 0);
   if (osd)
   {
-    tArea area = { xPos, yPos, xPos + width - 1, yPos + height - 1, 4 };
+    tArea area = { setup.osd_left,
+                   setup.osd_top,
+                   setup.osd_left + (setup.osd_width & ~0x03) - 1,
+                   setup.osd_top + setup.osd_height - 1,
+                   4 };
+    eOsdError err = osd->CanHandleAreas(&area, 1);
+    if (err == oeOutOfMemory &&
+        setup.osd_error_compensation == SetupData::ReduceColors)
+    {
+      // Reduce colors
+      area.bpp = 2;
+      err = osd->CanHandleAreas(&area, 1);
+    }
+    while (err == oeOutOfMemory)
+    {
+      if (setup.osd_error_compensation != SetupData::ShrinkWidth)
+      {
+        // Shrink height
+        area.y1 += 2;
+        area.y2 -= 2;
+      }
+      if (setup.osd_error_compensation == SetupData::ShrinkWidth ||
+          setup.osd_error_compensation == SetupData::ShrinkWidthHeight)
+      {
+        // Shrink width
+        area.x1 += 2;
+        area.x2 -= 2;
+      }
+      err = osd->CanHandleAreas(&area, 1);
+    }
+
+    // Before setting the osd area - check if we are near the osd memory limit -
+    // then we use an workaround for driver error (no output near memory limit)
+    // I hope an extra shrink of 12 lines height is enough to avoid the error
+    area.y2 += 12;
+    err = osd->CanHandleAreas(&area, 1);
+    area.y2 -= 12;
+    if (err == oeOutOfMemory)
+    {
+      area.y1 += 6;
+      area.y2 -= 6;
+    }
     osd->SetAreas(&area, 1);
-    start();
+    if (area.bpp <= 2)
+      colors = reduced_colors;
+
+    // Load bitmaps
+    cursor = new Bitmap(cursorWidth, cursorHeight, confdir, cursorName);
+    back = new Bitmap(cardWidth, cardHeight, confdir, coverName);
+    frame = new Bitmap(cardWidth, cardHeight, colors.card_frame,
+                                              colors.card_frame_bg);
+    for (int s = 0; s < suitCount; ++s)
+      for (int r = 0; r < rankCount; ++r)
+        cards[s][r] = new Bitmap(cardWidth, cardHeight, confdir,
+                                 suitNames[s], rankNames[r]);
+
+    if (deck == NULL || tableau == NULL)
+      start();
     paint();
   }
 }
@@ -199,6 +265,16 @@ eOSState Game::ProcessKey(eKeys key)
           tableau->unselect();
           status = cursorOnPile;
           break;
+        case kGreen:
+          tableau->unselect();
+          tableau->backward();
+          status = cursorOnPile;
+          break;
+        case kYellow:
+          tableau->unselect();
+          tableau->forward();
+          status = cursorOnPile;
+          break;
         default:
           return osContinue;
       }
@@ -207,9 +283,10 @@ eOSState Game::ProcessKey(eKeys key)
     {
       switch (key)
       {
+        case kLeft:
+        case kRight:
         case kDown:
           status = cursorOnPile;
-          currentPile = 0;
           break;
         case kOk:
           if (tableau->pack->empty())
@@ -218,6 +295,12 @@ eOSState Game::ProcessKey(eKeys key)
             infoText = tr("Deal not allowed with empty piles");
           else
             tableau->deal();
+          break;
+        case kGreen:
+          tableau->backward();
+          break;
+        case kYellow:
+          tableau->forward();
           break;
         default:
           return osContinue;
@@ -237,19 +320,6 @@ eOSState Game::ProcessKey(eKeys key)
 /** Start a new game */
 void Game::start()
 {
-  // Load bitmaps
-  if (cursor == NULL)
-  {
-    cursor = new Bitmap(cursorWidth, cursorHeight, confdir, cursorName);
-    back = new Bitmap(cardWidth, cardHeight, confdir, coverName);
-    frame = new Bitmap(cardWidth, cardHeight, clrWhite, clrGray50);
-
-    for (int s = 0; s < suitCount; ++s)
-      for (int r = 0; r < rankCount; ++r)
-        cards[s][r] = new Bitmap(cardWidth, cardHeight, confdir,
-                                 suitNames[s], rankNames[r]);
-  }
-
   delete deck;
   delete tableau;
   deck = NULL;
@@ -263,12 +333,17 @@ void Game::start()
     dealCount = 4;
     pileCount = 7;
   }
-  else // normal variation
+  else if (setup.variation == SetupData::Normal)
   {
     deckCount = 2;
     dealCount = 5;
     pileCount = 10;
-    xDist = -23;
+  }
+  else // SetupData::Custom: custom variation
+  {
+    deckCount = setup.deck_count;
+    dealCount = setup.deal_count;
+    pileCount = setup.pile_count;
   }
 
   if (pileCount > rankCount * suitCount * deckCount)
@@ -281,44 +356,48 @@ void Game::start()
 /** Paint all pieces of the game */
 void Game::paint()
 {
-  int x1 = xPos;
-  int x2 = xPos + width - 1;
-  int y1 = yPos;
-  int y2 = yPos + height - 1;
+  const cBitmap* bm = osd->GetBitmap(0);
+  int x1 = bm->X0();
+  int x2 = bm->X0() + bm->Width() - 1;
+  int y1 = bm->Y0();
+  int y2 = bm->Y0() + bm->Height() - 1;
 
   // Save and restore palette to reduce flickering
-  cPalette savePalette(*osd->GetBitmap(0));
-  osd->DrawRectangle(x1,     y1,     x2,     y2,     clrGray50);
+  cPalette savePalette(*bm);
+  osd->DrawRectangle(x1, y1, x2, y2, colors.background);
   osd->SetPalette(savePalette, 0);
 
   // Paint red frame
-  osd->DrawRectangle(x1,     y1,     x2,     y1 + 1, clrRed);
-  osd->DrawRectangle(x1,     y1,     x1 + 1, y2,     clrRed);
-  osd->DrawRectangle(x1,     y2 - 1, x2,     y2,     clrRed);
-  osd->DrawRectangle(x2 - 1, y1,     x2,     y2,     clrRed);
+  osd->DrawRectangle(x1,     y1,     x2,     y1 + 1, colors.osd_frame);
+  osd->DrawRectangle(x1,     y1,     x1 + 1, y2,     colors.osd_frame);
+  osd->DrawRectangle(x1,     y2 - 1, x2,     y2,     colors.osd_frame);
+  osd->DrawRectangle(x2 - 1, y1,     x2,     y2,     colors.osd_frame);
 
-  paintPack();
+  if (!setup.hide_toprow || status == cursorOnPack)
+  {
+    paintPack();
 
-  unsigned int f;
-  for (f = 0; f < tableau->finals.size(); ++f)
-    if (tableau->finals[f]->empty())
-      break;
-  unsigned int count = f;
-  for (f = tableau->finals.size(); f-- > count;)
-    paintFinal(f);
-  for (f = 0; f < count; ++f)
-    paintFinal(f);
+    unsigned int f;
+    for (f = 0; f < tableau->finals.size(); ++f)
+      if (tableau->finals[f]->empty())
+        paintFinal(f);
+    for (f = 0; f < tableau->finals.size(); ++f)
+      if (!tableau->finals[f]->empty())
+        paintFinal(f);
+  }
 
   unsigned int p;
-  for (p = tableau->piles.size(); p-- > currentPile + 1;)
-    paintPile(p);
-  for (p = 0; p <= currentPile; ++p)
-    paintPile(p);
+  for (p = 0; p < tableau->piles.size(); ++p)
+    if (tableau->piles[p]->empty())
+      paintPile(p);
+  for (p = 0; p < tableau->piles.size(); ++p)
+    if (!tableau->piles[p]->empty())
+      paintPile(p);
 
   if (infoText)
   {
     info->text(infoText);
-    osd->DrawBitmap(xPos + (width - info->Width()) / 2, yPos + 10, *info);
+    osd->DrawBitmap(x1 + (x2 - x1 + 1 - info->Width()) / 2, y1 + 10, *info);
     infoText = NULL;
   }
   osd->Flush();
@@ -327,8 +406,9 @@ void Game::paint()
 /** Paint the pack */
 void Game::paintPack()
 {
-  int packX = xPos + 1;
-  int packY = yPos + 1;
+  const cBitmap* bm = osd->GetBitmap(0);
+  int packX = bm->X0() + 1;
+  int packY = bm->Y0() + 1;
   if (tableau->pack->empty())
     paintFrame(packX, packY);
   else
@@ -340,9 +420,11 @@ void Game::paintPack()
 /** Paint a final heap */
 void Game::paintFinal(unsigned int f)
 {
+  const cBitmap* bm = osd->GetBitmap(0);
   int offset = tableau->piles.size() - tableau->finals.size();
-  int finalX = xPos + 1 + (f + offset) * (cardWidth + xDist);
-  int finalY = yPos + 1;
+  int finalX = bm->X0() + 1 + ((f + offset) * (bm->Width() - 1 - cardWidth)) /
+                              (tableau->piles.size() - 1);
+  int finalY = bm->Y0() + 1;
   if (tableau->finals[f]->empty())
     paintFrame(finalX, finalY);
   else
@@ -352,16 +434,20 @@ void Game::paintFinal(unsigned int f)
 /** Paint a pile */
 void Game::paintPile(unsigned int p)
 {
-  int pileX = xPos + 1 + p * (cardWidth + xDist);
-  int pileY = yPos + 1 + cardHeight + 1;
+  const cBitmap* bm = osd->GetBitmap(0);
+  int pileX = bm->X0() + 1 + (p * (bm->Width() - 1 - cardWidth)) /
+                             (tableau->piles.size() - 1);
+  int pileY = bm->Y0() + 1;
+  if (!setup.hide_toprow || status == cursorOnPack)
+    pileY += cardHeight + 1;
   paintFrame(pileX, pileY);
 
   int count = tableau->piles[p]->count();
   int closed = count - tableau->piles[p]->open();
   int unselected = count - tableau->piles[p]->selected();
-  int dist = yDist;
-  if (pileY + (count + 1) * dist > yPos + height)
-    dist = (yPos + height - pileY) / (count + 1);
+  int dist = cardHeight / 6;
+  if (pileY + (count + 1) * dist > bm->Y0() + bm->Height())
+    dist = (bm->Y0() + bm->Height() - pileY) / (count + 1);
 
   for (int c = 0; c < count; ++c, pileY += dist)
   {
@@ -383,9 +469,9 @@ void Game::paintCursor(int x, int y)
 {
   int x0 = x + (cardWidth - cursorWidth) / 2;
   int y0 = y + (cardHeight - cursorHeight) / 2;
-  tColor color = clrBlue;
+  tColor color = colors.inactive_cursor;
   if (status == selectedPile)
-    color = clrYellow;
+    color = colors.active_cursor;
   for (x = 0; x < cursorWidth; ++x)
     for (y = 0; y < cursorHeight; ++y)
       if (cursor->Color(*cursor->Data(x, y)) != clrTransparent)

@@ -1,12 +1,25 @@
-This is a "plugin" for the Video Disk Recorder (VDR).
+Spider-Arachnid: A plug-in for the Video Disk Recorder
+------------------------------------------------------
 
-Written by:                  Thomas Günther <tom@toms-cafe.de>
+Copyright (C) 2005-2007, Thomas Günther <tom@toms-cafe.de>
 
-Project's homepage:          http://toms-cafe.de/vdr/spider
+Project's homepage: http://toms-cafe.de/vdr/spider
 
-Latest version available at: http://toms-cafe.de/vdr/spider
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
 
-See the file COPYING for license information.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+See the file COPYING for the full license information.
 
 
 Requirements:
@@ -58,37 +71,73 @@ cards that become exposed are turned face-up.
 Empty piles can be filled by any card or sequence. When there are no empty
 piles you can deal new cards from the pack one card into each pile.
 
+You can suspend a game by pressing the Back key and resume it later (as long as
+the VDR isn't stopped).
+
 
 Setup:
 ------
 
-In the setup page one of two variations can be choosed:
+- Variation                One of three variations could be chosen.
+                           Values: Mini, Normal, Custom. Default: Normal.
+  Mini                     Variation with one deck and 7 piles.
+  Normal                   Variation with two decks and 10 piles.
+  Custom                   Variation with user defined deck, pile and deal
+                           counts.
+- Deck count               Number of decks in the custom variation.
+                           Values: 1-4. Default: 2.
+- Pile count               Number of piles on the tableau in the custom
+                           variation.
+                           Values: 1-20. Default: 10.
+- Deal count               Number of deals from the pack in the custom
+                           variation. Each deal places one more card into each
+                           pile.
+                           Values: 1-10. Default: 5.
+- OSD position left        The left offset of the OSD.
+                           Values: 0-720. Default: 48.
+- OSD position top         The top offset of the OSD.
+                           Values: 0-576. Default: 45.
+- OSD width                The width of the OSD. This must be a multiple of 4.
+                           Otherwise it will be aligned.
+                           Values: 100-720. Default: 624.
+- OSD height               The height of the OSD.
+                           Values: 100-576. Default is 486.
+- OSD error compensation   Method of compensation if the OSD memory limit is
+                           exceeded.
+                           Values: Shrink height, Shrink width, Shrink width and
+                           height, Reduce colors. Default: Shrink height.
+  Shrink height            Shrink the height of the OSD.
+  Shrink width             Shrink the width of the OSD.
+  Shrink width and height  Shrink the width and the height of the OSD.
+  Reduce colors            Reduce the number of colors of the OSD to 4 colors.
+                           Some colors of the card images will be wrong.
+- Hide top row             Hide the top row of the tableau. It will be shown if
+                           you move the cursor to the pack.
+                           Values: yes/no. Default: yes.
 
-- Mini        With one deck and 7 piles
-- Normal      With two decks and 10 piles
-
-Cause of the limited OSD space the 'Mini' variation is the standard.
+With the "Reset" button you can reset all parameters to the default values.
 
 
-Usage:
-------
+Keys:
+-----
 
 Global keys:
-- Back        Quit the plug-in
-- Blue        Start a new game
+- Green                    Take back one move.
+- Yellow                   Redo one move.
+- Blue                     Start a new game.
+- Menu/Back                Quit the plug-in.
 
 Cursor in pile:
-- Left/Right  Move the cursor to the left/right pile
-- Up          Move the cursor to the pack
-- Ok          Select all matching cards in the pile
-- Green       Take back one move
-- Yellow      Redo one move
+- Left/Right               Move the cursor to the left/right pile.
+- Up                       Move the cursor to the pack.
+- Ok                       Select all matching cards in the pile.
 
-Selected pile (yellow cursor):
-- Left/Right  Move selected cards to the next matching pile left/right
-- Up/Down     Select one more/less card
-- Up          Remove a complete suit
+Selected pile (yellow cursor if colors not reduced):
+- Left/Right               Move selected cards to the next matching pile
+                           left/right.
+- Up/Down                  Select one more/less card.
+- Up                       Remove a complete suit.
 
 Cursor on pack:
-- Down        Move to the first pile
-- Ok          Deal one card into each pile
+- Left/Right/Down          Move the cursor to the current pile.
+- Ok                       Deal one card into each pile.

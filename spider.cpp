@@ -17,10 +17,11 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: spider.cpp 96 2007-09-23 13:18:41Z tom $
+ * $Id: spider.cpp 97 2007-09-24 22:29:48Z tom $
  */
 
 #include "spider.h"
+namespace Spider { class Deck; class Tableau; }
 #include "game.h"
 #include "setup.h"
 #include "i18n.h"
@@ -49,6 +50,8 @@ namespace SpiderPlugin
   class Plugin : public cPlugin
   {
     SetupData setup;
+    Spider::Deck* deck;
+    Spider::Tableau* tableau;
 
   public:
 
@@ -91,6 +94,8 @@ bool Plugin::Start()
 #if VDRVERSNUM < 10507
   RegisterI18n(Phrases);
 #endif
+  deck = NULL;
+  tableau = NULL;
   return true;
 }
 
@@ -100,7 +105,7 @@ bool Plugin::Start()
  */
 cOsdObject* Plugin::MainMenuAction()
 {
-  return new Game(setup, ConfigDirectory(Name()));
+  return new Game(setup, ConfigDirectory(Name()), deck, tableau);
 }
 
 /** Setup menu page to adjust the setup parameters of the plugin

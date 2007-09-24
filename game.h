@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: game.h 95 2007-09-21 23:01:10Z tom $
+ * $Id: game.h 97 2007-09-24 22:29:48Z tom $
  */
 
 #ifndef VDR_SPIDER_GAME_H
@@ -43,21 +43,31 @@ namespace SpiderPlugin
   {
     const SetupData& setup;
     const char* confdir;
-    int width, height;
-    int xPos, yPos;
-    int xDist, yDist;
     cOsd* osd;
     Bitmap* info;
     const char* infoText;
-    Spider::Deck* deck;
-    Spider::Tableau* tableau;
+    Spider::Deck*& deck;
+    Spider::Tableau*& tableau;
     unsigned int currentPile;
     enum { cursorOnPile, selectedPile, cursorOnPack, gameOver } status;
+    struct Colors
+    {
+      tColor background;
+      tColor osd_frame;
+      tColor card_frame;
+      tColor card_frame_bg;
+      tColor inactive_cursor;
+      tColor active_cursor;
+    };
+    Colors colors;
+    static const Colors full_colors;
+    static const Colors reduced_colors;
 
   public:
 
     /** Constructor */
-    Game(const SetupData& setup, const char* confdir);
+    Game(const SetupData& setup, const char* confdir,
+         Spider::Deck*& deck, Spider::Tableau*& tableau);
 
     /** Destructor */
     virtual ~Game();

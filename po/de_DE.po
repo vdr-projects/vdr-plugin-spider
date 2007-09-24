@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the vdr-spider package.
 # Thomas Günther <tom@toms-cafe.de>, 2005.
 #
-# $Id$
+# $Id: de_DE.po 97 2007-09-24 22:29:48Z tom $
 #
 msgid ""
 msgstr ""

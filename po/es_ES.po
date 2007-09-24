@@ -3,7 +3,7 @@
 # This file is distributed under the same license as the vdr-spider package.
 # bittor from open7x0.org, 2007.
 #
-# $Id$
+# $Id: es_ES.po 97 2007-09-24 22:29:48Z tom $
 #
 msgid ""
 msgstr ""
