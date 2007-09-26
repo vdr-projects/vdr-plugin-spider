@@ -101,7 +101,7 @@ Setup:
                            Otherwise it will be aligned.
                            Values: 100-720. Default: 624.
 - OSD height               The height of the OSD.
-                           Values: 100-576. Default is 486.
+                           Values: 100-576. Default: 486.
 - OSD error compensation   Method of compensation if the OSD memory limit is
                            exceeded.
                            Values: Shrink height, Shrink width, Shrink width and

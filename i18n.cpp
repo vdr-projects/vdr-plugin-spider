@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.cpp 96 2007-09-23 13:18:41Z tom $
+ * $Id: i18n.cpp 98 2007-09-26 00:05:32Z tom $
  *
  *
  * Translations provided by:
@@ -132,6 +132,336 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // suomi / Finnish
     "", // Polski / Polish
     "Normal", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Custom", // English
+    "Benutzerdefiniert", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { " Deck count", // English
+    " Blatt-Anzahl", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { " Pile count", // English
+    " Anzahl Reihen", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { " Deal count", // English
+    " Neue Karten geben", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "OSD position left", // English
+    "OSD-Position links", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "OSD position top", // English
+    "OSD-Position oben", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "OSD width", // English
+    "OSD-Breite", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "OSD height", // English
+    "OSD-Höhe", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "OSD error compensation", // English
+    "OSD-Fehler kompensieren", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Shrink height", // English
+    "Höhe verringern", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Shrink width", // English
+    "Breite verringern", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Shrink width and height", // English
+    "Breite und Höhe verringern", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Reduce colors", // English
+    "Farben reduzieren", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Hide top row", // English
+    "Oberste Zeile verbergen", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
+    "", // ÅëëçíéêÜ / Greek
+    "", // Svenska / Swedish
+    "", // Românã / Romanian
+    "", // Magyar / Hungarian
+    "", // Català / Catalanian
+    "", // ÀãááÚØÙ / Russian
+    "", // Hrvatski / Croatian
+    "", // Eesti / Estonian
+    "", // Dansk / Danish
+    "", // Èesky / Czech
+  },
+  { "Reset", // English
+    "Zurücksetzen", // Deutsch / German
+    "", // Slovenski / Slovenian
+    "", // Italiano / Italian
+    "", // Nederlands / Dutch
+    "", // Português / Portuguese
+    "", // Français / French
+    "", // Norsk / Norwegian
+    "", // suomi / Finnish
+    "", // Polski / Polish
+    "", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian

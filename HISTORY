@@ -1,5 +1,5 @@
-VDR Plugin 'spider' Revision History
-------------------------------------
+VDR plug-in 'Spider-Arachnid' Revision History
+----------------------------------------------
 
 2005-05-12: Version 0.1.0
 
@@ -27,3 +27,18 @@ VDR Plugin 'spider' Revision History
 - Fixed compiler warnings with gcc-4.1.2.
 - Updated FSF address in the license information.
 - Improved copyright and license information in the header of all source files.
+
+2007-09-26: Version 0.2.0
+
+- Renamed *.c files to C++ suffix *.cpp.
+- Added namespaces.
+- Added gettext support (VDR >= 1.5.7).
+- Resume the last game.
+- Customizable width and height.
+- OSD error compensation (shrink width/height or reduce colors).
+- Added setup option to hide the top row.
+- Set normal variation (two decks and 10 piles) as standard, together with
+  "shrink height" and "hide top row".
+- Added user-defined variations.
+- Improved key handling.
+- Updated German language texts.

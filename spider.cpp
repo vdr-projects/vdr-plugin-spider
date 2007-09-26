@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: spider.cpp 97 2007-09-24 22:29:48Z tom $
+ * $Id: spider.cpp 98 2007-09-26 00:05:32Z tom $
  */
 
 #include "spider.h"
@@ -34,7 +34,7 @@ namespace SpiderPlugin
 {
 
   /** Version number of the plugin */
-  static const char* VERSION = "0.1.4";
+  static const char* VERSION = "0.2.0";
 
   /** Short description of the plugin's purpose */
   static const char* DESCRIPTION =
