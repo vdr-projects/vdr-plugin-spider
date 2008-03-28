@@ -42,3 +42,7 @@ VDR plug-in 'Spider-Arachnid' Revision History
 - Added user-defined variations.
 - Improved key handling.
 - Updated German language texts.
+
+2008-03-__: Version 0.2.1
+
+- Generating translation files without line numbers.

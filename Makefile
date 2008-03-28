@@ -1,7 +1,7 @@
 #
-# Spider-Arachnid: A plugin for the Video Disk Recorder
+# Spider-Arachnid: A plug-in for the Video Disk Recorder
 #
-# Copyright (C) 2005-2007, Thomas Günther <tom@toms-cafe.de>
+# Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 # with this program; if not, write to the Free Software Foundation, Inc.,
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-# $Id: Makefile 96 2007-09-23 13:18:41Z tom $
+# $Id: Makefile 127 2008-03-28 22:22:16Z tom $
 
 # The official name of this plugin.
 # This name will be used in the '-P...' option of VDR to load the plugin.
@@ -88,11 +88,11 @@ I18Npo    = $(notdir $(wildcard $(PODIR)/*.po))
 I18Npot   = $(PODIR)/$(PLUGIN).pot
 
 $(I18Npot): $(SRCS)
-	xgettext -C -cTRANSLATORS --no-wrap -F -k -ktr -ktrNOOP \
+	xgettext -C -cTRANSLATORS --no-wrap --no-location -k -ktr -ktrNOOP \
 	         --msgid-bugs-address='<tom@toms-cafe.de>' -o $@ $^
 
 %.po: $(I18Npot)
-	msgmerge -U --no-wrap -F --backup=none -q $@ $<
+	msgmerge -U --no-wrap --no-location --backup=none -q $@ $<
 	@touch $@
 
 $(LOCALEDIR)/%/LC_MESSAGES/vdr-$(PLUGIN).mo: $(PODIR)/%.po
