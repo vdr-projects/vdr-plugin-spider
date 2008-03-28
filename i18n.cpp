@@ -1,7 +1,7 @@
 /*
- * Spider-Arachnid: A plugin for the Video Disk Recorder
+ * Spider-Arachnid: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2005-2007, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,12 +17,13 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.cpp 98 2007-09-26 00:05:32Z tom $
+ * $Id: i18n.cpp 128 2008-03-28 22:28:49Z tom $
  *
  *
  * Translations provided by:
  *
  * Spanish     bittor from open7x0.org
+ * Italian     Diego Pierotto <vdr-italian@tiscali.it>
  *
  */
 
@@ -36,7 +37,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Spider Arachnid", // English
     "Spider Arachnid", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Ragno Aracnide", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -58,7 +59,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Spider Arachnid - the best patience game", // English
     "Spider Arachnid - die beste Patience", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Ragno Aracnide - il migliore gioco di pazienza", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -80,7 +81,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Variation", // English
     "Variante", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Variante", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -102,7 +103,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Mini (one deck)", // English
     "Mini (ein Blatt)", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Mini (un mazzo)", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -124,7 +125,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Normal", // English
     "Normal", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Normale", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -146,7 +147,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Custom", // English
     "Benutzerdefiniert", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Personalizzata", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -168,7 +169,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { " Deck count", // English
     " Blatt-Anzahl", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    " Conteggio mazzo", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -190,7 +191,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { " Pile count", // English
     " Anzahl Reihen", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    " Conteggio mucchio", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -212,7 +213,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { " Deal count", // English
     " Neue Karten geben", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    " Conteggio mano", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -234,7 +235,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "OSD position left", // English
     "OSD-Position links", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Posizione sinistra OSD", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -256,7 +257,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "OSD position top", // English
     "OSD-Position oben", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Posizione superiore OSD", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -278,7 +279,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "OSD width", // English
     "OSD-Breite", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Larghezza OSD", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -300,7 +301,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "OSD height", // English
     "OSD-Höhe", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Altezza OSD", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -322,7 +323,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "OSD error compensation", // English
     "OSD-Fehler kompensieren", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Compensazione errore OSD", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -344,7 +345,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Shrink height", // English
     "Höhe verringern", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Ridimensiona altezza", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -366,7 +367,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Shrink width", // English
     "Breite verringern", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Ridimensiona larghezza", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -388,7 +389,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Shrink width and height", // English
     "Breite und Höhe verringern", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Ridimensiona larghezza e altezza", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -410,7 +411,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Reduce colors", // English
     "Farben reduzieren", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Riduci colori", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -432,7 +433,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Hide top row", // English
     "Oberste Zeile verbergen", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Nascondi riga superiore", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -454,7 +455,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Reset", // English
     "Zurücksetzen", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Reimposta", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -476,7 +477,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Only complete suits are allowed to remove", // English
     "Nur vollständige Sätze können entfernt werden", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Solo i colori completi possono essere rimossi", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -498,7 +499,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "No cards left", // English
     "Keine Karten übrig", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Nessuna carta rimasta", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -520,7 +521,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Deal not allowed with empty piles", // English
     "Neue Karten nur, wenn alle Reihen belegt", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Operazione non permessa con i mucchi vuoti", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -542,7 +543,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Congratulations!\nPress OK to start a new game", // English
     "Herzlichen Glückwunsch!\nOK startet ein neues Spiel", // Deutsch / German
     "", // Slovenski / Slovenian
-    "", // Italiano / Italian
+    "Complimenti!\nPremi OK per iniziare una nuova partita", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
