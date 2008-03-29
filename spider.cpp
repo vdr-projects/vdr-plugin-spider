@@ -1,7 +1,7 @@
 /*
- * Spider-Arachnid: A plugin for the Video Disk Recorder
+ * Spider-Arachnid: A plug-in for the Video Disk Recorder
  *
- * Copyright (C) 2005-2007, Thomas Günther <tom@toms-cafe.de>
+ * Copyright (C) 2005-2008, Thomas Günther <tom@toms-cafe.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: spider.cpp 98 2007-09-26 00:05:32Z tom $
+ * $Id: spider.cpp 129 2008-03-29 00:06:39Z tom $
  */
 
 #include "spider.h"
@@ -34,7 +34,7 @@ namespace SpiderPlugin
 {
 
   /** Version number of the plugin */
-  static const char* VERSION = "0.2.0";
+  static const char* VERSION = "0.2.1";
 
   /** Short description of the plugin's purpose */
   static const char* DESCRIPTION =
