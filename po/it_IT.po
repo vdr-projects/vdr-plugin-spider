@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the vdr-spider package.
 # Diego Pierotto <vdr-italian@tiscali.it>, 2007.
 #
-# $Id: it_IT.po 128 2008-03-28 22:28:49Z tom $
+# $Id: it_IT.po 132 2008-03-30 18:14:40Z tom $
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vdr-spider 0.2.1\n"
 "Report-Msgid-Bugs-To: <tom@toms-cafe.de>\n"
 "POT-Creation-Date: 2008-03-26 00:41+0100\n"
-"PO-Revision-Date: 2008-03-26 00:41+0100\n"
+"PO-Revision-Date: 2008-03-30 03:35+0100\n"
 "Last-Translator: Diego Pierotto <vdr-italian@tiscali.it>\n"
 "Language-Team:  <vdr@linuxtv.org>\n"
 "MIME-Version: 1.0\n"
@@ -40,16 +40,16 @@ msgid "Normal"
 msgstr "Normale"
 
 msgid "Custom"
-msgstr "Personalizzata"
+msgstr "Personale"
 
 msgid "Shrink height"
-msgstr "Ridimensiona altezza"
+msgstr "Ridim. altezza"
 
 msgid "Shrink width"
-msgstr "Ridimensiona larghezza"
+msgstr "Ridim. larghezza"
 
 msgid "Shrink width and height"
-msgstr "Ridimensiona larghezza e altezza"
+msgstr "Ridim. larghezza e altezza"
 
 msgid "Reduce colors"
 msgstr "Riduci colori"
@@ -62,15 +62,15 @@ msgstr "Variante"
 
 #. TRANSLATORS: note the leading blank!
 msgid " Deck count"
-msgstr " Conteggio mazzo"
+msgstr " Numero mazzi"
 
 #. TRANSLATORS: note the leading blank!
 msgid " Pile count"
-msgstr " Conteggio mucchio"
+msgstr " Numero mucchi"
 
 #. TRANSLATORS: note the leading blank!
 msgid " Deal count"
-msgstr " Conteggio mano"
+msgstr " Numero mani"
 
 msgid "OSD position left"
 msgstr "Posizione sinistra OSD"

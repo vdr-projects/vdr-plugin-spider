@@ -17,7 +17,7 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.cpp 128 2008-03-28 22:28:49Z tom $
+ * $Id: i18n.cpp 132 2008-03-30 18:14:40Z tom $
  *
  *
  * Translations provided by:
@@ -147,7 +147,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Custom", // English
     "Benutzerdefiniert", // Deutsch / German
     "", // Slovenski / Slovenian
-    "Personalizzata", // Italiano / Italian
+    "Personale", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -169,7 +169,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { " Deck count", // English
     " Blatt-Anzahl", // Deutsch / German
     "", // Slovenski / Slovenian
-    " Conteggio mazzo", // Italiano / Italian
+    " Numero mazzi", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -191,7 +191,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { " Pile count", // English
     " Anzahl Reihen", // Deutsch / German
     "", // Slovenski / Slovenian
-    " Conteggio mucchio", // Italiano / Italian
+    " Numero mucchi", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -213,7 +213,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { " Deal count", // English
     " Neue Karten geben", // Deutsch / German
     "", // Slovenski / Slovenian
-    " Conteggio mano", // Italiano / Italian
+    " Numero mani", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -345,7 +345,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Shrink height", // English
     "Höhe verringern", // Deutsch / German
     "", // Slovenski / Slovenian
-    "Ridimensiona altezza", // Italiano / Italian
+    "Ridim. altezza", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -367,7 +367,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Shrink width", // English
     "Breite verringern", // Deutsch / German
     "", // Slovenski / Slovenian
-    "Ridimensiona larghezza", // Italiano / Italian
+    "Ridim. larghezza", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
@@ -389,7 +389,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
   { "Shrink width and height", // English
     "Breite und Höhe verringern", // Deutsch / German
     "", // Slovenski / Slovenian
-    "Ridimensiona larghezza e altezza", // Italiano / Italian
+    "Ridim. larghezza e altezza", // Italiano / Italian
     "", // Nederlands / Dutch
     "", // Português / Portuguese
     "", // Français / French
