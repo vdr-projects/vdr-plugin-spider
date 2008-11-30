@@ -1,13 +1,13 @@
 # Italian translations for vdr-spider package.
 # Copyright (C) 2007-2008 Thomas Günther <tom@toms-cafe.de>
 # This file is distributed under the same license as the vdr-spider package.
-# Diego Pierotto <vdr-italian@tiscali.it>, 2007.
+# Diego Pierotto <vdr-italian@tiscali.it>, 2007, 2008.
 #
-# $Id: it_IT.po 132 2008-03-30 18:14:40Z tom $
+# $Id: it_IT.po 168 2008-11-30 00:10:05Z tom $
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vdr-spider 0.2.1\n"
+"Project-Id-Version: vdr-spider 0.2.2\n"
 "Report-Msgid-Bugs-To: <tom@toms-cafe.de>\n"
 "POT-Creation-Date: 2008-03-26 00:41+0100\n"
 "PO-Revision-Date: 2008-03-30 03:35+0100\n"

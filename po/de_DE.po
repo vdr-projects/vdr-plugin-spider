@@ -3,11 +3,11 @@
 # This file is distributed under the same license as the vdr-spider package.
 # Thomas Günther <tom@toms-cafe.de>, 2005, 2007.
 #
-# $Id: de_DE.po 129 2008-03-29 00:06:39Z tom $
+# $Id: de_DE.po 168 2008-11-30 00:10:05Z tom $
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vdr-spider 0.2.1\n"
+"Project-Id-Version: vdr-spider 0.2.2\n"
 "Report-Msgid-Bugs-To: <tom@toms-cafe.de>\n"
 "POT-Creation-Date: 2008-03-26 00:41+0100\n"
 "PO-Revision-Date: 2008-03-26 00:41+0100\n"
