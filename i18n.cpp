@@ -17,13 +17,13 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  *
- * $Id: i18n.cpp 132 2008-03-30 18:14:40Z tom $
+ * $Id: i18n.cpp 167 2008-11-30 00:03:32Z tom $
  *
  *
  * Translations provided by:
  *
- * Spanish     bittor from open7x0.org
  * Italian     Diego Pierotto <vdr-italian@tiscali.it>
+ * Spanish     Bittor Corl <bittor7x0 _at_ gmail.com>
  *
  */
 
@@ -154,7 +154,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Seleccionar", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -176,7 +176,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    " Contar baraja", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -198,7 +198,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    " Contar montón", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -220,7 +220,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    " Contar reparto", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -242,7 +242,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Posición OSD izquierda", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -264,7 +264,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Posición OSD superior", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -286,7 +286,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Anchura OSD", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -308,7 +308,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Altura OSD", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -330,7 +330,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Error compensación OSD", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -352,7 +352,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Encoger altura", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -374,7 +374,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Encoger anchura", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -396,7 +396,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Encoger anchura y altura", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -418,7 +418,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Reducir colores", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -440,7 +440,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Ocultar fila superior", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
@@ -462,7 +462,7 @@ const tI18nPhrase SpiderPlugin::Phrases[] = {
     "", // Norsk / Norwegian
     "", // suomi / Finnish
     "", // Polski / Polish
-    "", // Español / Spanish
+    "Reiniciar", // Español / Spanish
     "", // ÅëëçíéêÜ / Greek
     "", // Svenska / Swedish
     "", // Românã / Romanian
